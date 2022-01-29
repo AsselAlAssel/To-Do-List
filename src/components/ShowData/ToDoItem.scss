@@ -1,0 +1,74 @@
+@mixin border-radius($var) {
+    border-radius: $var;
+    -webkit-border-radius: $var;
+    -moz-border-radius: $var;
+    -ms-border-radius: $var;
+    -o-border-radius: $var;
+}
+
+.card {
+    background-color: rgb(175, 175, 175);
+    height: 13rem;
+    width: 23%;
+    margin: 5px;
+    padding: 10px;
+    @include border-radius((10px));
+    .title {
+        height: 8rem;
+    }
+    .card-complete-delete {
+        display: flex;
+        justify-content: space-between;
+        div {
+            width: 50%;
+            text-align: center;
+            button {
+                cursor: pointer;
+                color: #fff;
+                font-size: 25px;
+                width: 150px;
+                border: none;
+                padding: 5px 15px;
+                @include border-radius(10px);
+            }
+            .done {
+                background-color: green;
+            }
+            .delete {
+                background-color: red;
+            }
+        }
+    }
+}
+
+.expire {
+    animation-name: aaa;
+    animation-duration: .5s;
+    background-color: red !important;
+    animation-fill-mode: forwards;
+    /* position: absolute; */
+}
+
+@keyframes aaa {
+    from {
+        opacity: 1;
+    }
+    to {
+        top: 500px;
+        opacity: 0;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    // for tablet
+    .card {
+        width: 48%;
+    }
+}
+
+@media only screen and (max-width: 620px) {
+    /* For mobile phones: */
+    .card {
+        width: 100%;
+    }
+}
