@@ -1,0 +1,42 @@
+.to-do-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    form {
+        // background-color: red;
+        width: 50%;
+        text-align: center;
+        input {
+            border-radius: 10px;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            -ms-border-radius: 10px;
+            -o-border-radius: 10px;
+            border: 1px solid black;
+        }
+        .input-todo {
+            width: 70%;
+            padding: 7px;
+            margin-right: 10px;
+            font-size: 18px;
+        }
+        .input-todo:focus {
+            background-color: rgba(95, 191, 230, 0.5);
+        }
+        .submit {
+            font-size: 18px;
+            padding: 7px 20px;
+            cursor: pointer;
+            background-color: purple;
+            color: #fff;
+            transition: background-color .5s linear;
+            -webkit-transition: background-color .5s linear;
+            -moz-transition: background-color .5s linear;
+            -ms-transition: background-color .5s linear;
+            -o-transition: background-color .5s linear;
+        }
+        .submit:hover {
+            background-color: rgb(46, 219, 46);
+        }
+    }
+}
