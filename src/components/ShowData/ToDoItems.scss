@@ -1,6 +1,23 @@
+$phone:1;
+$tablet:2;
+$onother:4;
 .to-do-items {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    padding: 10px 10px;
+    display: grid;
+    grid-template-columns: repeat($onother, minmax(0, 1fr));
+    grid-gap: 10px;
+    padding: 10px;
+}
+
+@media screen and (max-width: 992px) {
+    //  for tablet
+    .to-do-items {
+        grid-template-columns: repeat($tablet, minmax(0, 1fr));
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    // /* For mobile phones: */
+    .to-do-items {
+        grid-template-columns: repeat($phone, minmax(0, 1fr));
+    }
 }

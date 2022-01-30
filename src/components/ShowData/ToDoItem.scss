@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 @mixin border-radius($var) {
     border-radius: $var;
     -webkit-border-radius: $var;
@@ -6,69 +10,44 @@
     -o-border-radius: $var;
 }
 
+* {
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 .card {
-    background-color: rgb(175, 175, 175);
+    background-color: rgb(124, 124, 124);
+    // width: 100%;
+    @include border-radius(10px);
     height: 13rem;
-    width: 23%;
-    margin: 5px;
-    padding: 10px;
-    @include border-radius((10px));
     .title {
-        height: 8rem;
+        height: 9rem;
+        background-color: blue;
+        padding: 5px 10px;
     }
     .card-complete-delete {
+        height: 4rem;
         display: flex;
-        justify-content: space-between;
+        justify-content: flex-end;
+        align-items: center;
         div {
-            width: 50%;
-            text-align: center;
+            width: 40%;
+            // background-color: red;
             button {
+                text-align: center;
                 cursor: pointer;
-                color: #fff;
-                font-size: 25px;
-                width: 150px;
                 border: none;
-                padding: 5px 15px;
-                @include border-radius(10px);
+                @include border-radius(5px);
+                width: 90%;
+                padding: 10px 30px;
+                color: #fff;
             }
             .done {
-                background-color: green;
+                background-color: orange;
             }
             .delete {
                 background-color: red;
             }
         }
-    }
-}
-
-.expire {
-    animation-name: aaa;
-    animation-duration: .5s;
-    background-color: red !important;
-    animation-fill-mode: forwards;
-    /* position: absolute; */
-}
-
-@keyframes aaa {
-    from {
-        opacity: 1;
-    }
-    to {
-        top: 500px;
-        opacity: 0;
-    }
-}
-
-@media screen and (max-width: 1000px) {
-    // for tablet
-    .card {
-        width: 48%;
-    }
-}
-
-@media only screen and (max-width: 620px) {
-    /* For mobile phones: */
-    .card {
-        width: 100%;
     }
 }
