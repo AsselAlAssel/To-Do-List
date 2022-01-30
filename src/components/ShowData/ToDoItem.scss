@@ -33,12 +33,14 @@
         div {
             width: 40%;
             // background-color: red;
+            text-align: right;
+            padding-right: 10px;
             button {
                 text-align: center;
                 cursor: pointer;
                 border: none;
                 @include border-radius(5px);
-                width: 90%;
+                width: 70%;
                 padding: 10px 30px;
                 color: #fff;
             }
