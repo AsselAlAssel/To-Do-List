@@ -4,7 +4,7 @@ import FilterShow from "./components/FilterShow/FilterShow";
 import Head from "./components/Head";
 import NewToDoItemForm from "./components/NewToDoItem/NewToDoItemForm";
 import ToDoItems from "./components/ShowData/ToDoItems";
-const stateList= ["available" , "completed" , "deleted"];
+const stateList = ["available", "completed", "deleted"];
 const toDoItems = [
   {
     title: "read the react book",
@@ -55,18 +55,23 @@ const App = () => {
     setToDoList((prev) => [...prev, newItem]);
   };
 
-  const changeStateHandler=(stateChecked)=>{
-    setState(stateChecked);
+  const changeStateHandler = (stateChecked) => {
 
-  }
-  const clearHandle=()=>{
-setToDoList([]);
-  }
+    setState(stateChecked);
+  };
+  const clearHandle = () => {
+    setToDoList([]);
+  };
   return (
     <div>
       <Head />
       <NewToDoItemForm onAdd={addNewItem} />
-     <FilterShow state={state} stateList={stateList} onChangeState={changeStateHandler} onClear={clearHandle}/>
+      <FilterShow
+        state={state}
+        stateList={stateList}
+        onChangeState={changeStateHandler}
+        
+      />
       {/* <h2 style={{textAlign:"center"}}>{state.toUpperCase()}</h2> */}
       <ToDoItems
         list={toDoList}
@@ -74,8 +79,6 @@ setToDoList([]);
         onComplete={completeHandler}
         onDelete={deleteHandler}
       />
-      
-     
     </div>
   );
 };

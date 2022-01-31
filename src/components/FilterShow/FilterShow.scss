@@ -1,0 +1,21 @@
+.filter-show {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: center;
+    .state-show,
+    .select-state {
+        padding: 10px 20px;
+        h2 {
+            letter-spacing: 2px;
+            font-weight: 300;
+        }
+    }
+    .select-state {
+        text-align: right;
+        select {
+            padding: 10px 30px;
+            font-size: 19px;
+            cursor: pointer;
+        }
+    }
+}
