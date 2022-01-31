@@ -65,7 +65,7 @@ const App = () => {
   return (
     <div>
       <Head />
-      <NewToDoItemForm onAdd={addNewItem} />
+      <NewToDoItemForm onAdd={addNewItem} onClear={clearHandle} />
       <FilterShow
         state={state}
         stateList={stateList}

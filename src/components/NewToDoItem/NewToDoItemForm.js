@@ -2,8 +2,14 @@ import React, { useState } from "react";
 import "./NewToDoItemForm.scss";
 const NewToDoItemForm = (props) => {
   const [toDoText, settoDoText] = useState("");
+  const [isValid, setIsValid] = useState(true);
   const submitHandler = (e) => {
     e.preventDefault();
+    if(toDoText.trim().length===0){
+      setIsValid(false);
+      return;
+    }
+ 
     const item = {
       title: toDoText,
       state: "available",
@@ -14,11 +20,17 @@ const NewToDoItemForm = (props) => {
     settoDoText("");
   };
   const inputChangeHandler = (e) => {
+    if(e.target.value.trim().length>0){
+      setIsValid(true);
+    }
     settoDoText(e.target.value);
   };
+  const clearHandler = () => {
+    
+  };
   return (
-    <div className="to-do-form" onSubmit={submitHandler}>
-      <form action="">
+    <form onSubmit={submitHandler}>
+      <div className={`to-do-form ${!isValid ? 'invalid':""}`}>
         <div>
           <input
             type="text"
@@ -28,13 +40,17 @@ const NewToDoItemForm = (props) => {
             className="input-todo"
             onChange={inputChangeHandler}
             value={toDoText}
-            required
           />
-
-          <input type="submit" className="submit" value="Add" />
         </div>
-      </form>
-    </div>
+
+        <div className="btns">
+          <button type="submit" className="submit">
+            Add
+          </button>
+          <button type="button" className="clear" onClick={clearHandler}>Cancel</button>
+        </div>
+      </div>
+    </form>
   );
 };
 export default NewToDoItemForm;

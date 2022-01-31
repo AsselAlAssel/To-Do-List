@@ -1,42 +1,63 @@
 .to-do-form {
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
     align-items: center;
-    form {
-        // background-color: red;
-        width: 50%;
+    div {
         text-align: center;
-        input {
-            border-radius: 10px;
-            -webkit-border-radius: 10px;
-            -moz-border-radius: 10px;
-            -ms-border-radius: 10px;
-            -o-border-radius: 10px;
-            border: 1px solid black;
-        }
-        .input-todo {
-            width: 70%;
-            padding: 7px;
-            margin-right: 10px;
+        input,
+        button {
             font-size: 18px;
         }
-        .input-todo:focus {
-            background-color: rgba(95, 191, 230, 0.5);
+        input[type="text"] {
+            width: 90%;
+            padding: 10px 10px;
+            border: 1px solid #ccc;
+        }
+        input[type="text"]:focus {
+            background: #ffd7d7;
+            border-color: red;
+        }
+        button {
+            width: 7rem;
+            padding: 10px 20px;
+            text-align: center;
+            margin: 10px;
+            cursor: pointer;
+        }
+        button:hover {
+            box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
         }
         .submit {
-            font-size: 18px;
-            padding: 7px 20px;
-            cursor: pointer;
-            background-color: purple;
+            background: #8c185d;
             color: #fff;
-            transition: background-color .5s linear;
-            -webkit-transition: background-color .5s linear;
-            -moz-transition: background-color .5s linear;
-            -ms-transition: background-color .5s linear;
-            -o-transition: background-color .5s linear;
         }
         .submit:hover {
-            background-color: rgb(46, 219, 46);
+            background: transparent;
+            border-color: #8c185d;
+            color: #8c185d;
+        }
+        .clear {
+            background: transparent;
+            color: #8c185d;
+        }
+        .clear:hover {
+            background: #8c185d;
+            color: #fff;
+        }
+    }
+}
+
+.to-do-form.invalid {
+    input {
+        border-color: red !important;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .to-do-form {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        .btns button {
+            width: 11rem;
         }
     }
 }
