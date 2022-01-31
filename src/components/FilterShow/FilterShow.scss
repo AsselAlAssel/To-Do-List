@@ -1,21 +1,27 @@
 .filter-show {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(1, minmax(0, 1fr));
     align-items: center;
+    .select-state {
+        text-align: left;
+        select {
+            padding: 10px 20px;
+            font-size: 19px;
+            cursor: pointer;
+        }
+    }
     .state-show,
     .select-state {
-        padding: 10px 20px;
+        // padding: 10px 20px;
         h2 {
             letter-spacing: 2px;
             font-weight: 300;
         }
     }
-    .select-state {
-        text-align: left;
-        select {
-            padding: 10px 30px;
-            font-size: 19px;
-            cursor: pointer;
-        }
+}
+
+@media only screen and (min-width: 600px) {
+    .filter-show {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 }
