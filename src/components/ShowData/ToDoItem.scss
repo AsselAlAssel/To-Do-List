@@ -1,3 +1,4 @@
+$colorBtn :#8c185d;
 * {
     box-sizing: border-box;
 }
@@ -17,7 +18,8 @@
 
 .card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    background-color: rgb(124, 124, 124);
+    background-color: #1A374D;
+    color: #fff;
     // width: 100%;
     @include border-radius(10px);
     height: 13rem;
@@ -30,27 +32,36 @@
     .card-complete-delete {
         height: 4rem;
         display: flex;
-        justify-content: flex-end;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
         align-items: center;
         div {
-            width: 40%;
-            // background-color: red;
-            text-align: right;
+            width: 100%;
+            text-align: center;
             padding-right: 10px;
             button {
                 text-align: center;
                 cursor: pointer;
                 border: none;
-                @include border-radius(5px);
                 width: 70%;
                 padding: 10px 30px;
+                font-size: 18px;
                 color: #fff;
+                border: 2px solid #fff;
             }
             .done {
-                background-color: orange;
+                background: $colorBtn;
+            }
+            .done:hover {
+                background: transparent;
+                border-color: $colorBtn;
             }
             .delete {
-                background-color: red;
+                background: transparent;
+                border-color: $colorBtn;
+            }
+            .delete:hover {
+                background: $colorBtn;
+                border-color: #fff;
             }
         }
     }
