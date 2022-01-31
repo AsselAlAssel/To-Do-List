@@ -9,14 +9,15 @@ const FilterShow = (props) => {
   const optionsSelect = props.stateList.map((ele ,index) => <option value={ele} key={index}>{ele.toUpperCase()}</option>);
   return (
     <div className="filter-show">
-      <div className="state-show">
-        <h2>{props.state.toUpperCase()}</h2>
-      </div>
-      <div className="select-state">
+       <div className="select-state">
         <select onChange={changeHandler}>
           {optionsSelect}
         </select>
       </div>
+      <div className="state-show">
+        <h2>{props.state.toUpperCase()}</h2>
+      </div>
+     
     </div>
   );
 };
