@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import "./App.scss";
-import FilterBar from "./components/FiltrerBar";
+import FilterShow from "./components/FilterShow/FilterShow";
 import Head from "./components/Head";
 import NewToDoItemForm from "./components/NewToDoItem/NewToDoItemForm";
 import ToDoItems from "./components/ShowData/ToDoItems";
-const STATE = ["available" , "completed" , "deleted"];
+const stateList= ["available" , "completed" , "deleted"];
 const toDoItems = [
   {
     title: "read the react book",
@@ -64,10 +64,10 @@ setToDoList([]);
   }
   return (
     <div>
-       <FilterBar onChangeState={changeStateHandler} onClear={clearHandle} state={STATE}/>
       <Head />
       <NewToDoItemForm onAdd={addNewItem} />
-      <h2 style={{textAlign:"center"}}>{state.toUpperCase()}</h2>
+     <FilterShow state={state} stateList={stateList} onChangeState={changeStateHandler} onClear={clearHandle}/>
+      {/* <h2 style={{textAlign:"center"}}>{state.toUpperCase()}</h2> */}
       <ToDoItems
         list={toDoList}
         state={state}

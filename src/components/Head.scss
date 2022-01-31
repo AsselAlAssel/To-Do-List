@@ -4,18 +4,11 @@
 }
 
 .head {
-    display: flex;
-    justify-content: space-between;
     padding: 20px 15px;
     align-items: center;
     .logo {
         h2 {
             font-weight: 400;
-        }
-    }
-    .menu {
-        img {
-            cursor: pointer;
         }
     }
 }
