@@ -26,7 +26,8 @@ const NewToDoItemForm = (props) => {
     settoDoText(e.target.value);
   };
   const clearHandler = () => {
-    
+    settoDoText("");
+    props.onClear();
   };
   return (
     <form onSubmit={submitHandler}>
@@ -47,7 +48,7 @@ const NewToDoItemForm = (props) => {
           <button type="submit" className="submit">
             Add
           </button>
-          <button type="button" className="clear" onClick={clearHandler}>Cancel</button>
+          <button type="button" className="clear" onClick={clearHandler}>Clear All</button>
         </div>
       </div>
     </form>
